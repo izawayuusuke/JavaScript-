@@ -1,6 +1,6 @@
-(function () {
-  var i = 5;
+{
+  let i = 5;
   console.log(i);
-}.call(this)); // その場で実行
+}
 
 console.log(i); // 変数iはスコープ外なのでエラー
