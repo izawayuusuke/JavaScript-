@@ -1,8 +1,7 @@
 class Member {
   // コンストラクター
   constructor(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+    Object.assign(this, { firstName, lastName });
   }
 
   // メソッド
