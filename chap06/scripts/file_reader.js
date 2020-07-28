@@ -12,7 +12,17 @@ window.addEventListener("DOMContentLoaded", function () {
         },
         false
       );
+      // ファイル読み込み時にエラーが発生した場合、その結果をログ表示
+      reader.addEventListener(
+        "error",
+        function () {
+          console.log(reader.error.message);
+        },
+        true
+      );
       reader.readAsText(input, "UTF-8");
+      // エラーを発生させるため、読み込み直後に処理を中止
+      reader.abort();
     },
     true
   );
