@@ -9,7 +9,9 @@ document.addEventListener(
       },
     };
 
-    document.getElementById("btn").addEventListener("click", data.show, false);
+    document
+      .getElementById("btn")
+      .addEventListener("click", data.show.bind(data), false);
   },
   false
 );
