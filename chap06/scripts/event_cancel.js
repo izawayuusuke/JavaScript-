@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "click",
     function (e) {
       window.alert("#innerリスナーが発生しました。");
-      e.stopPropagation();
+      e.stopImmediatePropagation();
     },
     false
   );
