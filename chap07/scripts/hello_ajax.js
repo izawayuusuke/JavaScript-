@@ -6,21 +6,29 @@ document.addEventListener(
       function () {
         var result = document.getElementById("result");
         var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4) {
-            // 通信が完了した時
-            if (xhr.status === 200) {
-              // 通信が成功した時
-              result.textContent = xhr.responseText;
-            } else {
-              // 通信が失敗した時
-              result.textContent = "サーバーエラーが発生しました。";
-            }
-          } else {
-            // 通信が完了する前
+        xhr.addEventListener(
+          "loadstart",
+          function () {
             result.textContent = "通信中...";
-          }
-        };
+          },
+          false
+        );
+
+        xhr.addEventListener(
+          "load",
+          function () {
+            result.textContent = xhr.responseText;
+          },
+          false
+        );
+
+        xhr.addEventListener(
+          "error",
+          function () {
+            result.textContent = "サーバーエラーが発生しました。";
+          },
+          false
+        );
         // サーバーとの非同期通信を開始
         xhr.open(
           "GET",
