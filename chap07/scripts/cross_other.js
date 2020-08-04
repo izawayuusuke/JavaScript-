@@ -9,6 +9,9 @@ document.addEventListener(
           return;
         }
         document.getElementById("result").textContent = e.data;
+        // 現在の日付を返送
+        var current = new Date();
+        e.source.postMessage(current, origin);
       },
       false
     );
