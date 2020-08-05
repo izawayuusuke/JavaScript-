@@ -1,11 +1,11 @@
 // コンストラクター（base／heightプロパティの定義）
-var MyArea = function (base, height) {
+var  = function (base, height) {
   this.base = base;
   this.height = height;
 };
 
 // getTriangle／getSquareメソッドを定義
-MyArea.prototype = {
+.prototype = {
   getTriangle: function () {
     return (this.base * this.height) / 2;
   },
